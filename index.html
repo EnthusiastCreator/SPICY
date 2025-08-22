@@ -424,7 +424,7 @@
 
       .floating-banner {
         position: absolute;
-        top: 5%;
+        top: 0%;
         right: 1rem;
         width: 200px;
         height: 100px;
@@ -577,11 +577,17 @@
       @media (max-width: 768px) {
         body {
           animation: none;
+          cursor: auto !important; /* restore normal mobile tap */
         }
         .floating-banner,
         .image-box,
         .logo {
           animation: none;
+        }
+
+        .spicy-cursor,
+        .spicy-trail {
+          display: none !important; /* hide cursor + trails */
         }
       }
     </style>
@@ -629,16 +635,6 @@
     </div>
 
     <script>
-      //   const spicyCursor = document.createElement("div");
-      //   spicyCursor.className = "mouse-trail";
-      //   spicyCursor.innerText = "SPICY";
-      //   document.body.appendChild(spicyCursor);
-
-      //   document.addEventListener("mousemove", (e) => {
-      //     spicyCursor.style.top = `${e.clientY}px`;
-      //     spicyCursor.style.left = `${e.clientX}px`;
-      //   });
-
       // Main SPICY cursor
       const spicyCursor = document.createElement("div");
       spicyCursor.className = "spicy-cursor";
